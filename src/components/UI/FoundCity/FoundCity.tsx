@@ -9,13 +9,13 @@ const FoundCity = ({ children, ...props }: BtnProps): JSX.Element =>  {
     console.log(children.split(""));
     
     return(
-        // <div className={style.btn}>
+        
             <button className={style.btn}{...props}>
                 {children.split("").map((el)=>
                     <span className={style.btn__letter}>{el}</span>
                 )}
             </button> 
-        // </div>
+        
     )
 }
 
