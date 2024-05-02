@@ -44,11 +44,11 @@ export const useUserWeather = () => {
             if (error instanceof Error) {
                 const errorMessage = error.message;
                 console.error(errorMessage);
-                setErrUserWeather(`Невозможно получить данные погоды пользователя:${errorMessage}`);
+                setErrUserWeather(`Невозможно получить данные погоды пользователя`);
             } else {
                 const errorMessage = "неизвестная ошибка"
                 console.error(errorMessage);
-                setErrUserWeather(`Невозможно получить данные погоды пользователя:${errorMessage}`);
+                setErrUserWeather(`Невозможно получить данные погоды пользователя`);
             }
         }finally{
             setLoding(false)  
