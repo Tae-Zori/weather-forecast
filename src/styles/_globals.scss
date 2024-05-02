@@ -1,0 +1,85 @@
+.App{
+    width: 100vw;
+    height: 100vh;
+    align-content: end;
+    overflow: hidden;
+    font-family: "Comfortaa", sans-serif;
+    user-select: none;
+    &[data-time="morning"] {
+        @include appGradient($morningBgGradient);
+    }
+    &[data-time="noon"] {
+        @include appGradient($noonBgGradient);
+    }
+    &[data-time="evening"] {
+        @include appGradient($eveningBgGradient);
+    }
+    &[data-time="night"] {
+        @include appGradient($nightBgGradient);
+    }
+    
+    
+    &__content{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        height: 90vh;
+        width: 100%;
+        background-size: 100vw 90vh;
+
+        &[data-time="morning"] {
+            @include contentBg($morningContentBgImg);
+        }
+        &[data-time="noon"] {
+            @include contentBg($noonContentBgImg);
+        }
+        &[data-time="evening"] {
+            @include contentBg($eveningContentBgImg);
+        }
+        &[data-time="night"] {
+            @include contentBg($nightContentBgImg);
+        }
+    }
+}
+.modal__message{
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    padding: 2px;
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.9);
+    span{
+        display: block;
+        text-align: center;
+        width: 45vw;
+        min-width: 300px;
+        max-width: 500px; 
+    }
+}
+
+@media(max-width:1920px){
+   html{
+    font-size: 18px
+   } 
+}
+@media(max-width:1400px){
+    html{
+     font-size: 16px
+    } 
+}
+@media(max-width:900px){
+    html{
+     font-size: 12px
+    } 
+    .App__content{
+        background-size: 900px 90vh;
+        background-position: center;
+    }
+
+}
+@media(max-width:500px){
+    html{
+     font-size: 9px
+    } 
+}

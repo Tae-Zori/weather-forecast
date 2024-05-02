@@ -1,0 +1,27 @@
+.input {
+    width: 40vw;
+    min-width: 250px;
+    max-width: 450px;
+    border: #000;
+    border-bottom: 2px solid rgba(255, 255, 255, 0);
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    outline: none;
+    background-color: #625e5e7c;
+    font-size: 1.5rem;
+    box-shadow: -7px 3px 14px 0px rgba(0, 0, 0, 0.234);
+    transition: all 0.2s linear;
+    
+  
+  &::placeholder {
+    color: rgba(171, 170, 170, 0.917);
+    font-style: italic;
+  }
+  &:focus{
+    border-bottom: 2px solid #ff6918f3;
+    background: #786c6d96;
+    color: rgb(255, 254, 254);
+  }
+} 
