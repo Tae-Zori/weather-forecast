@@ -11,7 +11,7 @@ export const useUserWeather = () => {
     async function userInfo(): Promise<IUserInfo | string> {
         try {
             const response = await fetch(
-                `http://ip-api.com/json/?fields=lat,lon,query`
+                `https://json.geoiplookup.io/`
             );
             const data = await response.json();
             return data;
@@ -32,12 +32,12 @@ export const useUserWeather = () => {
         try {
             const info = await userInfo();
 
-            if (typeof info === "object" && "lat" in info && "lon" in info) {
-                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${info.lat}&lon=${info.lon}&units=metric&appid=${apiKey}&lang=${userLanguage}`)
+            if (typeof info === "object" && "latitude" in info && "longitude" in info) {
+                const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${info.latitude}&lon=${info.longitude}&units=metric&appid=${apiKey}&lang=${userLanguage}`)
                 const data = await response.json()
                 setDataWeather(data)
             } else {
-                setErrUserWeather(`Ошибка получения данных пользователя`);
+                setErrUserWeather(`Ошибка получения данных пользователя: ${info}`);
                 return
             }
         } catch (error: unknown) {
