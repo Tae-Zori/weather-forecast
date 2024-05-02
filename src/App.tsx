@@ -13,16 +13,18 @@ function App() {
         <div className={`App`} data-time={timeOfDay}>
             <Router>
                 <Navigation />
-                <Routes>
-                    <Route
-                        path="/"
-                        element={<UserWeatherPage timeOfDay={timeOfDay} />}
-                    />
-                    <Route
-                        path="/weather"
-                        element={<CityWeatherPage timeOfDay={timeOfDay} />}
-                    />
-                </Routes>
+                <div className="App__content" data-time={timeOfDay}>
+                    <Routes>
+                        <Route
+                            path="/"
+                            element={<UserWeatherPage/>}
+                        />
+                        <Route
+                            path="/weather"
+                            element={<CityWeatherPage/>}
+                        />
+                    </Routes>
+                </div>
             </Router>
         </div>
     );

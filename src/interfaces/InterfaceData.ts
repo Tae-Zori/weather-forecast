@@ -57,7 +57,3 @@ export interface IWeatherData {
     name: string;
     cod: number;
 }
-
-export interface IAppProps {
-    timeOfDay: string; // Предположим, что вы используете строковые значения для времени суток
-}

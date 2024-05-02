@@ -37,7 +37,7 @@ export const useUserWeather = () => {
                 const data = await response.json()
                 setDataWeather(data)
             } else {
-                setErrUserWeather(`Ошибка получения данных пользователя: ${info}`);
+                setErrUserWeather(`Ошибка получения данных пользователя`);
                 return
             }
         } catch (error: unknown) {

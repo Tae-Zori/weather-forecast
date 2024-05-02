@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-import { IAppProps, IWeatherData } from "../interfaces/InterfaceData";
+import { IWeatherData } from "../interfaces/InterfaceData";
 import { CityWeather } from "../data/CityWeather";
 import MyButton from "../components/UI/button/MyButton";
 import Modal from "../components/UI/modal/Modal";
@@ -10,7 +10,7 @@ import Loader from "../components/UI/loader/Loader";
 import ErrorMassage from "../components/errorMessage/ErrorMessage";
 import FoundCity from "../components/UI/FoundCity/FoundCity";
 
-export const CityWeatherPage: React.FC<IAppProps> = ({ timeOfDay }) => {
+export const CityWeatherPage = () => {
     const [valueInput, setValueInput] = useState<string>("");
     const [visibleModal, setVisibleModal] = useState<boolean>(true);
     const [data, setData] = useState<IWeatherData>({} as IWeatherData);
@@ -29,8 +29,8 @@ export const CityWeatherPage: React.FC<IAppProps> = ({ timeOfDay }) => {
     }
 
     return (
-        <div className="App__content" data-time={timeOfDay}>
-
+        // <div className="App__content" data-time={timeOfDay}>
+        <>
             {!visibleModal && 
                 <FoundCity onClick={() => setVisibleModal(true)}>
                     Найти—ещё
@@ -61,6 +61,7 @@ export const CityWeatherPage: React.FC<IAppProps> = ({ timeOfDay }) => {
                     <ErrorMassage errMessage={error}/>
                 
             )}
-        </div>
+        </>
+        // </div>
     );
 };
