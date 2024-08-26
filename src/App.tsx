@@ -7,22 +7,17 @@ import { UserWeatherPage } from "./pages/UserWeatherPage";
 import { CityWeatherPage } from "./pages/CityWeatherPage";
 
 function App() {
-  const timeOfDay = useHandlerTimeOfDay()
+    const timeOfDay = useHandlerTimeOfDay();
 
     return (
         <div className={`App`} data-time={timeOfDay}>
-            <Router>
+            <Router basename="/weather-forecast">
                 <Navigation />
                 <div className="App__content" data-time={timeOfDay}>
                     <Routes>
-                        <Route
-                            path="/"
-                            element={<UserWeatherPage/>}
-                        />
-                        <Route
-                            path="/weather"
-                            element={<CityWeatherPage/>}
-                        />
+                        <Route path="/" element={<UserWeatherPage />} />
+                        <Route path="/weather" element={<CityWeatherPage />} />
+                        <Route path="*" element={<UserWeatherPage />} />
                     </Routes>
                 </div>
             </Router>
